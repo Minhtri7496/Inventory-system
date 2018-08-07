@@ -1,0 +1,7 @@
+{
+  "name": "Ecofood",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
