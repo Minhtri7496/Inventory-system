@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { ModalController, NavParams, ViewController } from 'ionic-angular';
+
+import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -11,13 +14,31 @@ import { ModalController, NavParams, ViewController } from 'ionic-angular';
 
 export class HomePage {
 
-  constructor(public modalCtrl: ModalController) { }
+  
+  Recipes: FirebaseListObservable<any[]>;
+  title = '';
+  description = '';
+ 
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
+    this.Recipes = this.firebaseProvider.getRecipesItems();
+  }
+ 
+  addItem(id) {
+    this.firebaseProvider.addItem(this.title,this.description);
+   
+  }
+ 
+  removeItem(id) {
+    this.firebaseProvider.removeItem(id);
+  }
 
   openModal(characterNum) {
 
     let modal = this.modalCtrl.create(ModalContentPage, characterNum);
     modal.present();
   }
+
+  
 
 }
 @Component({
