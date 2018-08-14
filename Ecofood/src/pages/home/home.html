@@ -13,7 +13,9 @@
           </ion-thumbnail>
           <h2>Pancakes</h2>
           <p>This simple and delicious pancake recipe by taste member, </p>
-          <button ion-button clear item-end>View</button>
+          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 0})">
+              View
+            </a></button>
         </ion-item>
     
         <ion-item>
@@ -22,7 +24,10 @@
           </ion-thumbnail>
           <h2>French toast</h2>
           <p>The best of the best of end-of-week foods</p>
-          <button ion-button clear item-end>View</button>
+          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 1})">
+              View
+            </a></button>
+          
         </ion-item>
     
         <ion-item>
@@ -31,7 +36,9 @@
           </ion-thumbnail>
           <h2>Ultimate big breakfast</h2>
           <p>Hold the muesli - nothing will make your day like this serious breakfast with all the trimmings.</p>
-          <button ion-button clear item-end>View</button>
+          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 1})">
+              View
+            </a></button>
         </ion-item>
     
         <ion-item>
@@ -40,7 +47,9 @@
           </ion-thumbnail>
           <h2>Eggs baked in patatas bravas</h2>
           <p>Spice up kitchen staples with this low-fat, gluten-free dinner idea inspired by Spain.</p>
-          <button ion-button clear item-end>View</button>
+          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 2})">
+              View
+            </a></button>
         </ion-item>
     
         
