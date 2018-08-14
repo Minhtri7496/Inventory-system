@@ -7,9 +7,12 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { ModalContentPage } from '../pages/home/home'
+import { ModalContentPage } from '../pages/home/home';
+import{AdditemPage} from'../pages/additem/additem';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -29,7 +32,7 @@ const firebaseConfig = {
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    HomePage,AdditemPage,
     TabsPage,ModalContentPage
   ],
   imports: [
@@ -43,7 +46,7 @@ const firebaseConfig = {
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    HomePage,AdditemPage,
     TabsPage,ModalContentPage
   ],
   providers: [

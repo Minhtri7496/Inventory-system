@@ -3,8 +3,9 @@ import { NavController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { ModalController, NavParams, ViewController } from 'ionic-angular';
 
-import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseListObservable  } from 'angularfire2/database';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
+import { AdditemPage } from '../additem/additem';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -15,7 +16,7 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 export class HomePage {
 
   
-  Recipes: FirebaseListObservable<any[]>;
+  Recipes: FirebaseListObservable <any[]>;
   title = '';
   description = '';
  
@@ -37,7 +38,9 @@ export class HomePage {
     let modal = this.modalCtrl.create(ModalContentPage, characterNum);
     modal.present();
   }
-
+  GoToAddItem(){
+    this.navCtrl.push(AdditemPage);
+  }
   
 
 }
