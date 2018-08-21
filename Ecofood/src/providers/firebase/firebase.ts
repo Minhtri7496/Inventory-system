@@ -11,19 +11,20 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class FirebaseProvider {
 
   
-  constructor(public afd: AngularFireDatabase) { }
+  constructor(public recipe: AngularFireDatabase) { }
  
+  
   getRecipesItems() {
-    return this.afd.list('Recipes/');
+    return this.recipe.list('Recipes/');
   }
  
   addItem(title,description) {
-    this.afd.list('Recipes/').push(title);
-    this.afd.list('Recipes/').push(description);
+    this.recipe.list('Recipes/'+title);
+    this.recipe.list('Recipes/'+title+'/description').push(description);
   }
- 
+  
   removeItem(id) {
-    this.afd.list('Recipes/').remove(id);
+    this.recipe.list('Recipes/').remove(id);
   }
 
 }

@@ -30,7 +30,7 @@
     <ion-list>
         <ion-item-sliding *ngFor="let item of Recipes | async">
           <ion-item>
-            {{ item.$value }}
+            {{ item.description | json }}
           </ion-item>
           <ion-item-options side="right">
             <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
