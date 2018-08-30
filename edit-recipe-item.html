@@ -1,0 +1,26 @@
+<!--
+  Generated template for the EditRecipeItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color= "primary">
+    <ion-title>{{recipeItem.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+<ion-label floating> Item Title</ion-label>
+<ion-input type="text" [(ngModel)] = "recipeItem.title"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating> Item Description</ion-label>
+      <ion-input type="text" [(ngModel)] = "recipeItem.description"></ion-input>
+ </ion-item>
+<button ion-button block (click)="updateRecipeItem(recipeItem)">Update Item </button>
+</ion-content>
