@@ -17,11 +17,13 @@ export class FirebaseProvider {
     return this.afd.list('Recipes/');
   }
  
-  addItem(title,description) {
-    this.afd.list('Recipes/').push(title);
-    this.afd.list('Recipes/').push(description);
+  addItem(title) {
+    this.afd.list('/Recipes/').push(title);
+    
   }
- 
+ selectItem(){
+   
+ }
   removeItem(id) {
     this.afd.list('Recipes/').remove(id);
   }

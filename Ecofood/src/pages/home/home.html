@@ -1,57 +1,28 @@
 <ion-header>
   <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
     <ion-title>Recipes</ion-title>
+    <button ion-button  (click)="GoToAddItem()"  end>Add Item</button>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-list>
 
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="https://img.taste.com.au/HZz8NjZk/w643-h428-cfill-q90/taste/2016/11/basic-pancakes-78986-1.jpeg">
-          </ion-thumbnail>
-          <h2>Pancakes</h2>
-          <p>This simple and delicious pancake recipe by taste member, </p>
-          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 0})">
-              View
-            </a></button>
-        </ion-item>
+<ion-content padding>
+  <h1>Recent added recipes</h1>
+  <ion-list>
+    <ion-item *ngFor ="let item of recipeItemRef$ | async" (click)="selectItem(item)">
     
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="https://www.recipetineats.com/wp-content/uploads/2014/06/French-Toast_3-731x1024.jpg">
-          </ion-thumbnail>
-          <h2>French toast</h2>
-          <p>The best of the best of end-of-week foods</p>
-          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 1})">
-              View
-            </a></button>
-          
-        </ion-item>
-    
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="https://img.taste.com.au/Ea0G0kRj/w643-h428-cfill-q90/taste/2016/11/english-breakfast-85003-2.jpeg">
-          </ion-thumbnail>
-          <h2>Ultimate big breakfast</h2>
-          <p>Hold the muesli - nothing will make your day like this serious breakfast with all the trimmings.</p>
-          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 1})">
-              View
-            </a></button>
-        </ion-item>
-    
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="https://img.taste.com.au/45N67qX3/w643-h428-cfill-q90/taste/2016/11/eggs-baked-in-patatas-bravas-100484-1.jpeg">
-          </ion-thumbnail>
-          <h2>Eggs baked in patatas bravas</h2>
-          <p>Spice up kitchen staples with this low-fat, gluten-free dinner idea inspired by Spain.</p>
-          <button ion-button clear item-end><a ion-item (click)="openModal({charNum: 2})">
-              View
-            </a></button>
-        </ion-item>
-      </ion-list>
-      <button ion-button full (click)="GoToAddItem()">Add Item</button>
+    <ion-thumbnail item-start>
+        <img src="https://img.taste.com.au/HZz8NjZk/w643-h428-cfill-q90/taste/2016/11/basic-pancakes-78986-1.jpeg">
+      </ion-thumbnail>
+      <h2> {{item.title }}</h2>
+      <p>{{item.description}} </p>
+      <p>Time completed: {{item.recipeNumber}}</p>
+      
+    </ion-item>
+
+  </ion-list>
+  <h1>Favourite recipes</h1>
+   
+      
 
 </ion-content>
