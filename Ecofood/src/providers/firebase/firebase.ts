@@ -18,11 +18,13 @@ export class FirebaseProvider {
     return this.recipe.list('Recipes/');
   }
  
-  addItem(title,description) {
-    this.recipe.list('Recipes/'+title);
-    this.recipe.list('Recipes/'+title+'/description').push(description);
+  addItem(title) {
+    this.recipe.list('/Recipes/').push(title);
+    
   }
-  
+ selectItem(){
+   
+ }
   removeItem(id) {
     this.recipe.list('Recipes/').remove(id);
   }

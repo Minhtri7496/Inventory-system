@@ -14,28 +14,22 @@
    
   <ion-content>
     <ion-row>
-      <ion-col col-9>
+      <ion-col >
         <ion-item>
-          <ion-input type="text" [(ngModel)]="title" placeholder="Title"></ion-input>
+          <ion-input type="text" [(ngModel)]="recipeItem.title" placeholder="Title"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="text" [(ngModel)]="description" placeholder="Description"></ion-input>
+          <ion-textarea type="text" [(ngModel)]="recipeItem.description" placeholder="Description"></ion-textarea>
         </ion-item>
-      </ion-col>
-      <ion-col>
-        <button ion-button (click)="addItem()">Add!</button>
-      </ion-col>
-    </ion-row>
-   
-    <ion-list>
-        <ion-item-sliding *ngFor="let item of Recipes | async">
-          <ion-item>
-            {{ item.description | json }}
+        <ion-item hidden>
+            <ion-input type="number" [(ngModel)]="recipeItem.recipeNumber" ng-value="0"></ion-input>
           </ion-item>
-          <ion-item-options side="right">
-            <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
-          </ion-item-options>
-        </ion-item-sliding>
-      </ion-list>
+      </ion-col>
 
+      
+
+        
+      
+    </ion-row>
+    <button ion-button (click)="addItem(recipeItem)" full>Add!</button>
   </ion-content>

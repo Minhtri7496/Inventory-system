@@ -4,7 +4,8 @@ import { Platform } from 'ionic-angular';
 
 import { FirebaseListObservable } from 'angularfire2/database';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-
+import {AngularFireDatabase} from 'angularfire2/database';
+import {RecipeItem} from './../../model/recipe-item/item.model'
 /**
  * Generated class for the AdditemPage page.
  *
@@ -17,23 +18,25 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
   templateUrl: 'additem.html',
 })
 export class AdditemPage {
+  recipeItem = {} as RecipeItem;
+  recipeItemRef$ : FirebaseListObservable<RecipeItem[]>
+   constructor( public navCtrl: NavController, private database :AngularFireDatabase) {
+     this.recipeItemRef$ = this.database.list('recipe-list');
 
-  Recipes: FirebaseListObservable<any[]>;
-  title = '';
-  description = '';
- 
-  constructor( public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
-    this.Recipes = this.firebaseProvider.getRecipesItems();
   }
  
-  addItem() {
-    this.firebaseProvider.addItem(this.title,this.description);
-   
+  addItem(recipeItem : RecipeItem) {
+    //log the result out 
+    
+    this.recipeItemRef$.push({
+      
+      title : this.recipeItem.title,
+      description: this.recipeItem.description,
+      recipeNumber: Number(this.recipeItem.recipeNumber=0)
+    });
+    this.navCtrl.pop();
   }
  
-  removeItem(id) {
-    this.firebaseProvider.removeItem(id);
-  }
 
   
 
