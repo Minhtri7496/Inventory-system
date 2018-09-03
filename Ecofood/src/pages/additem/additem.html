@@ -21,8 +21,19 @@
   <ion-content padding>
     
         <ion-item>
-          <ion-input type="text" [(ngModel)]="recipeItem.title" placeholder="Title"></ion-input>
+          <ion-label color="primary" fixed>Title</ion-label>
+          <ion-input type="text" [(ngModel)]="recipeItem.title" placeholder="Title of this recipe"></ion-input>
         </ion-item>
+        <ion-item>
+            <ion-label color="primary" fixed>Prep time</ion-label>
+            <ion-input type="number" [(ngModel)]="recipeItem.preptime" placeholder="Time in minutes"></ion-input>
+            
+          </ion-item>
+          <ion-item>
+              <ion-label color="primary" fixed>Cooking time</ion-label>
+              <ion-input type="number" [(ngModel)]="recipeItem.cookingtime" placeholder="Time in minutes"></ion-input>
+             
+            </ion-item>
         <ion-item>
           <ion-textarea type="text" [(ngModel)]="recipeItem.description" placeholder="Description"></ion-textarea>
         </ion-item>

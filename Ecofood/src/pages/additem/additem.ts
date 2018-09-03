@@ -42,7 +42,9 @@ export class AdditemPage {
       title : this.recipeItem.title,
       description: this.recipeItem.description,
       recipeNumber: Number(this.recipeItem.recipeNumber=0),
-      
+      preptime: this.recipeItem.preptime,
+      cookingtime: this.recipeItem.cookingtime,
+      totaltime: Number(this.recipeItem.preptime+this.recipeItem.cookingtime),
       image : this.recipeItem.image,
       stepinput: Number(this.inputsteps),
       step1 : this.recipeItem.step1
