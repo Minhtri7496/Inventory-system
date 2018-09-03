@@ -6,15 +6,20 @@
 -->
 <ion-header>
     <ion-navbar color="primary">
-      <ion-title>
-        Add Recipe
+      <ion-title>  
+        Add Recipe  
       </ion-title>
+      
+      <ion-buttons end>
+          <button ion-button (click)="addItem(recipeItem)" icon-only  large>
+              <ion-icon name="add"> </ion-icon>
+          </button>
+        </ion-buttons>
     </ion-navbar>
   </ion-header>
    
-  <ion-content>
-    <ion-row>
-      <ion-col >
+  <ion-content padding>
+    
         <ion-item>
           <ion-input type="text" [(ngModel)]="recipeItem.title" placeholder="Title"></ion-input>
         </ion-item>
@@ -24,27 +29,76 @@
         <ion-item hidden>
             <ion-input type="number" [(ngModel)]="recipeItem.recipeNumber" ng-value="0"></ion-input>
           </ion-item>
-          <ion-item>
-            <ion-input type="number" [(ngModel)]="inputsteps" placeholder="steps"></ion-input>
-          </ion-item>
-        {{inputsteps}}
+        <ion-item>
+              <ion-textarea type="URL" [(ngModel)]="recipeItem.image" placeholder="Place Image URL here"></ion-textarea>
+        </ion-item>
+        <br>  
           
-          <ion-item *ngIf = "inputsteps==1">
-              <ion-input type="text"  placeholder="Step {{inputsteps}}"></ion-input>
+          <ion-label id="stepslabel"><h3>Steps</h3></ion-label>
+          
+          <ion-list>
+            <ion-item *ngIf="inputsteps>=1">
+              <ion-input  type="text" placeholder="Step 1" [(ngModel)]="recipeItem.step1" ></ion-input>
             </ion-item>
-
-            <ion-item *ngFor ="let step of steps; let i = index" >
-              <ion-input  type="text" placeholder="{{step}}" ></ion-input> 
+            <ion-item *ngIf="inputsteps>=2">
+                <ion-input  type="text" placeholder="Step 2" [(ngModel)]="recipeItem.step2" ></ion-input>
+            </ion-item>
+          
+              <ion-item *ngIf="inputsteps>=3">
+                <ion-input  type="text" placeholder="Step 3" [(ngModel)]="recipeItem.step3" ></ion-input>
+              </ion-item>
+            
+              <ion-item *ngIf="inputsteps>=4">
+                  <ion-input  type="text" placeholder="Step 4" [(ngModel)]="recipeItem.step4" ></ion-input>
+              </ion-item>
               
+              <ion-item *ngIf="inputsteps>=5">
+                  <ion-input  type="text" placeholder="Step 5" [(ngModel)]="recipeItem.step5" ></ion-input>
+              </ion-item>
+                
+              <ion-item *ngIf="inputsteps>=6">
+                  <ion-input  type="text" placeholder="Step 6" [(ngModel)]="recipeItem.step6" ></ion-input>
+              </ion-item>
+                  
+              <ion-item *ngIf="inputsteps>=7">
+                  <ion-input  type="text" placeholder="Step 7" [(ngModel)]="recipeItem.step7" ></ion-input>
+              </ion-item>
                     
-
-            </ion-item>
-      </ion-col>
-
-      
-
-        
-      
-    </ion-row>
-    <button ion-button (click)="addItem(recipeItem)" full>Add!</button>
+              <ion-item *ngIf="inputsteps>=8">
+                   <ion-input  type="text" placeholder="Step 8" [(ngModel)]="recipeItem.step8" ></ion-input>
+              </ion-item>
+                      
+              <ion-item *ngIf="inputsteps>=9">
+                   <ion-input  type="text" placeholder="Step 9" [(ngModel)]="recipeItem.step9" ></ion-input>
+              </ion-item>
+                        
+              <ion-item *ngIf="inputsteps>=10">
+                   <ion-input  type="text" placeholder="Step 10" [(ngModel)]="recipeItem.step10" ></ion-input>
+              </ion-item>
+              
+              <ion-item *ngIf="inputsteps>=11">
+                   <ion-input  type="text" placeholder="Step 11" [(ngModel)]="recipeItem.step11" ></ion-input>
+              </ion-item>
+              <ion-item *ngIf="inputsteps>=12">
+                  <ion-input  type="text" placeholder="Step 12" [(ngModel)]="recipeItem.step12" ></ion-input>
+              </ion-item>
+             <ion-item *ngIf="inputsteps>=13">
+                <ion-input  type="text" placeholder="Step 13" [(ngModel)]="recipeItem.step13" ></ion-input>
+              </ion-item>
+              <ion-item *ngIf="inputsteps>=14">
+                  <ion-input  type="text" placeholder="Step 14" [(ngModel)]="recipeItem.step14" ></ion-input>
+             </ion-item>
+             <ion-item *ngIf="inputsteps>=15">
+                <ion-input  type="text" placeholder="Step 15" [(ngModel)]="recipeItem.step15" ></ion-input>
+           </ion-item> 
+            </ion-list> 
+            <button ion-button (click)="addmorestep()" full>Add a step</button>
+            
+            <br>
+            <br>
+            <br>
+            <br>
+  
+    
+    
   </ion-content>

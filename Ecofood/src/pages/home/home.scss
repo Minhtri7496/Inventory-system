@@ -2,3 +2,25 @@
 ion-title{
 text-align: center;
 }
+.card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+  
+    .card-title {
+      position: absolute;
+      top: 45%;
+      text-transform: uppercase;
+      font-size: 175%;
+      width: 100%;
+      font-weight: bold;
+      color: whitesmoke;
+    }
+    .cardsub{
+    font-weight: bold;
+    }
+  
+   
+  }

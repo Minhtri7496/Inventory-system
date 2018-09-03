@@ -1,14 +1,7 @@
-import { Url } from "url";
-
-export interface RecipeItem{
-$key? : string;
-title : string;
-description: string;
-image:Url;
-stepinput: number;
-recipeNumber: Number;
-
-step1: string;
+export interface ItemStep{
+  
+    title: string;
+    step1: string;
     step2: string;
     step3: string;
     step4: string;
@@ -23,4 +16,5 @@ step1: string;
     step13: string;
     step14: string;
     step15: string;
-}
+    
+    }

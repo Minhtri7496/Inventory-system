@@ -1,28 +1,31 @@
 <ion-header>
   <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
     <ion-title>Recipes</ion-title>
-    <button ion-button  (click)="GoToAddItem()"  end>Add Item</button>
+
+    
+    
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <h1>Recent added recipes</h1>
-  <ion-list>
-    <ion-item *ngFor ="let item of recipeItemRef$ | async" (click)="selectItem(item)">
-    
-    <ion-thumbnail item-start>
-        <img src="https://img.taste.com.au/HZz8NjZk/w643-h428-cfill-q90/taste/2016/11/basic-pancakes-78986-1.jpeg">
-      </ion-thumbnail>
-      <h2> {{item.title }}</h2>
-      <p>{{item.description}} </p>
-      <p>Time completed: {{item.recipeNumber}}</p>
-      
-    </ion-item>
+  
+  
+  
+      <div class="card-background-page">
+      <ion-card *ngFor ="let item of recipeItemRef$ | async" (click)="selectItem(item)" >
+          <img src="{{item.image}}"/>
+          <div class="card-title">{{item.title }}</div>
+          <div class="cardsub">Description: {{item.description}}</div>
+          <div class="cardsub">Number of steps: {{item.stepinput}}</div>
+          <div class="cardsub">Time completed: {{item.recipeNumber}}</div>
+        </ion-card>
+       </div>
 
-  </ion-list>
-  <h1>Favourite recipes</h1>
    
-      
+  <ion-fab right top>
+      <button (click)="GoToAddItem()" ion-fab mini><ion-icon name="add"></ion-icon></button>
 
+  </ion-fab>
+  <br><br><br><br>
 </ion-content>
