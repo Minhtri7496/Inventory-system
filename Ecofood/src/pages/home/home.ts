@@ -7,6 +7,7 @@ import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2/datab
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { AdditemPage } from '../additem/additem';
 import {RecipeItem} from './../../model/recipe-item/item.model'
+import {EditRecipeItemPage} from '../edit-recipe-item/edit-recipe-item';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -28,7 +29,7 @@ export class HomePage {
     buttons:[{
       text : 'Edit',
       handler:() => {
-        //edit item
+        this.navCtrl.push(EditRecipeItemPage,{recipeItemId : recipeItem.$key});
       }
     },{
 text: 'Delete',

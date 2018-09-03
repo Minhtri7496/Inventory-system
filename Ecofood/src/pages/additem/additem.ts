@@ -18,11 +18,17 @@ import {RecipeItem} from './../../model/recipe-item/item.model'
   templateUrl: 'additem.html',
 })
 export class AdditemPage {
+  public inputsteps: number =0;
+    steps: Array <any> = [];
+
+
   recipeItem = {} as RecipeItem;
   recipeItemRef$ : FirebaseListObservable<RecipeItem[]>
    constructor( public navCtrl: NavController, private database :AngularFireDatabase) {
      this.recipeItemRef$ = this.database.list('recipe-list');
-
+    this.steps=[
+      "Step 1","Step 2","Step 3","Step 4","Step 5","Step 6","Step 7","Step 8","Step 9","Step 10"
+    ]
   }
  
   addItem(recipeItem : RecipeItem) {
@@ -36,7 +42,7 @@ export class AdditemPage {
     });
     this.navCtrl.pop();
   }
- 
+
 
   
 

@@ -24,6 +24,21 @@
         <ion-item hidden>
             <ion-input type="number" [(ngModel)]="recipeItem.recipeNumber" ng-value="0"></ion-input>
           </ion-item>
+          <ion-item>
+            <ion-input type="number" [(ngModel)]="inputsteps" placeholder="steps"></ion-input>
+          </ion-item>
+        {{inputsteps}}
+          
+          <ion-item *ngIf = "inputsteps==1">
+              <ion-input type="text"  placeholder="Step {{inputsteps}}"></ion-input>
+            </ion-item>
+
+            <ion-item *ngFor ="let step of steps; let i = index" >
+              <ion-input  type="text" placeholder="{{step}}" ></ion-input> 
+              
+                    
+
+            </ion-item>
       </ion-col>
 
       

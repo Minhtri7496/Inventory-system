@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import{AdditemPage} from'../pages/additem/additem';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {EditRecipeItemPage} from'../pages/edit-recipe-item/edit-recipe-item';
 
 
 import { FirebaseProvider } from '../providers/firebase/firebase';
@@ -31,7 +32,7 @@ const firebaseConfig = {
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,AdditemPage,
+    HomePage,AdditemPage,EditRecipeItemPage,
     TabsPage,
   ],
   imports: [
@@ -45,7 +46,7 @@ const firebaseConfig = {
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,AdditemPage,
+    HomePage,AdditemPage,EditRecipeItemPage,
     TabsPage,
   ],
   providers: [
