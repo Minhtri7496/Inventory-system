@@ -8,7 +8,7 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { AdditemPage } from '../additem/additem';
 import {RecipeItem} from './../../model/recipe-item/item.model'
 import {EditRecipeItemPage} from '../edit-recipe-item/edit-recipe-item';
-
+import {ShowFullRecipePage} from "../show-full-recipe/show-full-recipe";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -29,6 +29,11 @@ export class HomePage {
    this.actionSheetCtrl.create({
     title: `${recipeItem.title}`,
     buttons:[{
+      text : 'Show Recipe',
+      handler:() => {
+        this.navCtrl.push(ShowFullRecipePage,{recipeItemId : recipeItem.$key});
+      }
+    },{
       text : 'Edit',
       handler:() => {
         this.navCtrl.push(EditRecipeItemPage,{recipeItemId : recipeItem.$key});

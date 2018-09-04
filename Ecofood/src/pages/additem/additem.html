@@ -21,8 +21,19 @@
   <ion-content padding>
     
         <ion-item>
-          <ion-input type="text" [(ngModel)]="recipeItem.title" placeholder="Title"></ion-input>
+          <ion-label color="primary" fixed>Title</ion-label>
+          <ion-input type="text" [(ngModel)]="recipeItem.title" placeholder="Title of this recipe"></ion-input>
         </ion-item>
+        <ion-item>
+            <ion-label color="primary" fixed>Prep time</ion-label>
+            <ion-input type="text" [(ngModel)]="recipeItem.preptime" placeholder="Time in minutes"></ion-input>
+            
+          </ion-item>
+          <ion-item>
+              <ion-label color="primary" fixed>Cooking time</ion-label>
+              <ion-input type="text" [(ngModel)]="recipeItem.cookingtime" placeholder="Time in minutes"></ion-input>
+             
+            </ion-item>
         <ion-item>
           <ion-textarea type="text" [(ngModel)]="recipeItem.description" placeholder="Description"></ion-textarea>
         </ion-item>
@@ -37,11 +48,11 @@
           <ion-label id="stepslabel"><h3>Steps</h3></ion-label>
           
           <ion-list>
-            <ion-item *ngIf="inputsteps>=1">
+            <ion-item >
               <ion-input  type="text" placeholder="Step 1" [(ngModel)]="recipeItem.step1" ></ion-input>
             </ion-item>
             <ion-item *ngIf="inputsteps>=2">
-                <ion-input  type="text" placeholder="Step 2" [(ngModel)]="recipeItem.step2" ></ion-input>
+                <ion-input  type="text" placeholder="Step 2" [(ngModel)]="recipeItem.step2"  ></ion-input>
             </ion-item>
           
               <ion-item *ngIf="inputsteps>=3">
@@ -92,7 +103,24 @@
                 <ion-input  type="text" placeholder="Step 15" [(ngModel)]="recipeItem.step15" ></ion-input>
            </ion-item> 
             </ion-list> 
-            <button ion-button (click)="addmorestep()" full>Add a step</button>
+            
+            
+
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <button ion-button (click)="addmorestep()" full>Add a step </button>
+                </ion-col>
+                <ion-col>
+                  <button ion-button color="light" (click)="deletestep()" full>Delete a step</button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+
+
+
+
             
             <br>
             <br>

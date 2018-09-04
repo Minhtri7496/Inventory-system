@@ -4,6 +4,9 @@ export interface RecipeItem{
 $key? : string;
 title : string;
 description: string;
+preptime:string;
+cookingtime:string;
+totaltime:string;
 image:Url;
 stepinput: number;
 recipeNumber: Number;
