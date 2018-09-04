@@ -20,6 +20,8 @@ export class EditRecipeItemPage {
   recipeItemSubscription: Subscription;
   recipeItemRef$: FirebaseObjectObservable<RecipeItem>
   recipeItem = {} as RecipeItem;
+  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase) {
 
     const recipeItemId = this.navParams.get('recipeItemId');
@@ -32,6 +34,7 @@ export class EditRecipeItemPage {
   }
   deletestep(recipeItem: RecipeItem, stepno: number) {
     if (stepno == 1) {
+
       this.recipeItem.step1 = this.recipeItem.step2;
       this.recipeItem.step2 = this.recipeItem.step3;
       this.recipeItem.step3 = this.recipeItem.step4;
@@ -47,8 +50,9 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
-      this.recipeItem.stepinput =- 1;
-      console.log( this.recipeItem.stepinput);
+
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
+      
     }
     if (stepno == 2) {
       this.recipeItem.step2 = this.recipeItem.step3;
@@ -65,6 +69,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 3) {
       this.recipeItem.step3 = this.recipeItem.step4;
@@ -80,6 +85,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 4) {
       this.recipeItem.step4 = this.recipeItem.step5;
@@ -94,6 +100,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 5) {
       this.recipeItem.step5 = this.recipeItem.step6;
@@ -107,6 +114,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 6) {
       this.recipeItem.step6 = this.recipeItem.step7;
@@ -119,6 +127,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 7) {
       this.recipeItem.step7 = this.recipeItem.step8;
@@ -130,6 +139,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 8) {
       this.recipeItem.step8 = this.recipeItem.step9;
@@ -140,6 +150,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 9) {
       this.recipeItem.step9 = this.recipeItem.step10;
@@ -149,6 +160,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     } 
     if (stepno == 10) {
       this.recipeItem.step10 = this.recipeItem.step11;
@@ -157,6 +169,7 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 11) {
       this.recipeItem.step11 = this.recipeItem.step12;
@@ -164,25 +177,30 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 12) {
       this.recipeItem.step12 = this.recipeItem.step13;
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 13) {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 14) {
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
     if (stepno == 15) {
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput = this.recipeItem.stepinput -1;
     }
 
   }

@@ -53,37 +53,335 @@
         </button>
       </ion-item-options>
       <ion-item-options side="left">
-          <button ion-button color="primary" (click)="addstepbelow(recipeItem.step1,1)">
-              <ion-icon name="add"></ion-icon>
-              Step below
-            </button>
-        </ion-item-options>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step1,1)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
     </ion-item-sliding>
 
-<ion-item-sliding>
+    <ion-item-sliding>
       <ion-item *ngIf="recipeItem.stepinput >= 2">
         <ion-label floating> Step 2</ion-label>
         <ion-input type="text" [(ngModel)]="recipeItem.step2"></ion-input>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="danger" (click)="deletestep(recipeItem.step1,2)">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step2,2)">
           <ion-icon name="trash"></ion-icon>
           Delete step
         </button>
       </ion-item-options>
       <ion-item-options side="left">
-          <button ion-button color="secondary" (click)="addstepabove(recipeItem.step1,1)">
-            <ion-icon name="add"></ion-icon>
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step2,2)">
+          <ion-icon name="add"></ion-icon>
           Step above
-          </button>
-          <button ion-button color="primary" (click)="addstepbelow(recipeItem.step1,1)">
-              <ion-icon name="add"></ion-icon>
-              Step below
-            </button>
-        </ion-item-options>
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step2,2)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
     </ion-item-sliding>
 
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 3">
+        <ion-label floating> Step 3</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step3"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step3,3)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step3,3)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step3,3)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 4">
+        <ion-label floating> Step 4</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step4"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step4,4)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step4,4)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step4,4)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 5">
+        <ion-label floating> Step 5</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step5"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step5,5)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step5,5)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step5,5)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 6">
+        <ion-label floating> Step 6</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step6"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step6,6)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step6,6)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step6,6)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 7">
+        <ion-label floating> Step 7</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step7"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step7,7)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step7,7)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step7,7)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 8">
+        <ion-label floating> Step 8</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step8"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step8,8)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step8,8)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step8,8)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 9">
+        <ion-label floating> Step 9</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step9"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step9,9)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step9,9)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step9,9)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 10">
+        <ion-label floating> Step 10</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step10"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step10,10)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step10,10)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step10,10)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 11">
+        <ion-label floating> Step 11</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step11"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step11,11)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step11,11)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step11,11)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 12">
+        <ion-label floating> Step 12</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step12"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step12,12)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="addstepabove(recipeItem.step12,12)">
+          <ion-icon name="add"></ion-icon>
+          Step above
+        </button>
+        <button ion-button color="primary" (click)="addstepbelow(recipeItem.step12,12)">
+          <ion-icon name="add"></ion-icon>
+          Step below
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
+
+  <ion-item-sliding>
+    <ion-item *ngIf="recipeItem.stepinput >= 13">
+      <ion-label floating> Step 13</ion-label>
+      <ion-input type="text" [(ngModel)]="recipeItem.step13"></ion-input>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="deletestep(recipeItem.step13,13)">
+        <ion-icon name="trash"></ion-icon>
+        Delete step
+      </button>
+    </ion-item-options>
+    <ion-item-options side="left">
+      <button ion-button color="secondary" (click)="addstepabove(recipeItem.step13,13)">
+        <ion-icon name="add"></ion-icon>
+        Step above
+      </button>
+      <button ion-button color="primary" (click)="addstepbelow(recipeItem.step13,13)">
+        <ion-icon name="add"></ion-icon>
+        Step below
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item-sliding>
+    <ion-item *ngIf="recipeItem.stepinput >= 14">
+      <ion-label floating> Step 14</ion-label>
+      <ion-input type="text" [(ngModel)]="recipeItem.step14"></ion-input>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="deletestep(recipeItem.step14,14)">
+        <ion-icon name="trash"></ion-icon>
+        Delete step
+      </button>
+    </ion-item-options>
+    <ion-item-options side="left">
+      <button ion-button color="secondary" (click)="addstepabove(recipeItem.step14,14)">
+        <ion-icon name="add"></ion-icon>
+        Step above
+      </button>
+      <button ion-button color="primary" (click)="addstepbelow(recipeItem.step14,14)">
+        <ion-icon name="add"></ion-icon>
+        Step below
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item-sliding>
+    <ion-item *ngIf="recipeItem.stepinput >= 15">
+      <ion-label floating> Step 15</ion-label>
+      <ion-input type="text" [(ngModel)]="recipeItem.step15"></ion-input>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="deletestep(recipeItem.step15,15)">
+        <ion-icon name="trash"></ion-icon>
+        Delete step
+      </button>
+    </ion-item-options>
+    <ion-item-options side="left">
+      <button ion-button color="secondary" (click)="addstepabove(recipeItem.step15,15)">
+        <ion-icon name="add"></ion-icon>
+        Step above
+      </button>
+      <button ion-button color="primary" (click)="addstepbelow(recipeItem.step15,15)">
+        <ion-icon name="add"></ion-icon>
+        Step below
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
 
   <button ion-button block (click)="updateRecipeItem(recipeItem)">Update Item </button>
   <br>
