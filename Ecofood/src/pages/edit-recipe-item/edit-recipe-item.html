@@ -6,8 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar color= "primary">
+  <ion-navbar color="primary">
     <ion-title>{{recipeItem.title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="updateRecipeItem(recipeItem)" icon-only large>
+        <ion-icon name="construct"> </ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,12 +20,58 @@
 
 <ion-content padding>
   <ion-item>
-<ion-label floating> Item Title</ion-label>
-<ion-input type="text" [(ngModel)] = "recipeItem.title"></ion-input>
+    <ion-label floating> Item Title</ion-label>
+    <ion-input type="text" [(ngModel)]="recipeItem.title"></ion-input>
   </ion-item>
   <ion-item>
-      <ion-label floating> Item Description</ion-label>
-      <ion-input type="text" [(ngModel)] = "recipeItem.description"></ion-input>
- </ion-item>
-<button ion-button block (click)="updateRecipeItem(recipeItem)">Update Item </button>
+    <ion-label floating> Item Description</ion-label>
+    <ion-input type="text" [(ngModel)]="recipeItem.description"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating> Preparation time</ion-label>
+    <ion-input type="text" [(ngModel)]="recipeItem.preptime"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating> Cooking time</ion-label>
+    <ion-input type="text" [(ngModel)]="recipeItem.cookingtime"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating> Image URL</ion-label>
+    <ion-input type="URL" [(ngModel)]="recipeItem.image"></ion-input>
+  </ion-item>
+  <ion-list>
+
+    <ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 1">
+        <ion-label floating> Step 1</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step1"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step1,1)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+<ion-item-sliding>
+      <ion-item *ngIf="recipeItem.stepinput >= 2">
+        <ion-label floating> Step 2</ion-label>
+        <ion-input type="text" [(ngModel)]="recipeItem.step2"></ion-input>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletestep(recipeItem.step1,2)">
+          <ion-icon name="trash"></ion-icon>
+          Delete step
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <button ion-button block (click)="updateRecipeItem(recipeItem)">Update Item </button>
+  <br>
+  <br>
+  <br>
+  <br>
 </ion-content>

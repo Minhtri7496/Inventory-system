@@ -9,7 +9,7 @@
   <ion-navbar color="primary">
     <ion-title>
       <h1>{{recipeItem.title}}</h1>
-    
+
     </ion-title>
   </ion-navbar>
 
@@ -18,263 +18,268 @@
 
 <ion-content class="cards-bg">
 
-    <ion-card>
-        <ion-card-content>
-            <ion-card-title>
-              <h1>{{recipeItem.title}}</h1>
-            </ion-card-title>
-            <p>
-              {{recipeItem.description}}
-            </p>
-          </ion-card-content>
-      <img src="{{recipeItem.image}}"/>
-  
-
-      <ion-grid>         
-          <ion-row>
-            <ion-col>
-              <div>
-                  <ion-item>
-                      <ion-icon name="clock" item-start></ion-icon>
-                      Preparation time
-                      <ion-badge item-end>{{recipeItem.preptime}} Minutes</ion-badge>
-                    </ion-item>
-              </div>
-            </ion-col>
-            <ion-col>
-              <div><ion-item>
-                  <ion-icon name="restaurant" item-start></ion-icon>
-                  Cooking time
-                  <ion-badge item-end>{{recipeItem.cookingtime}} Minutes</ion-badge>
-                </ion-item></div>
-            </ion-col> 
-            <ion-col>
-                <div>
-                    <ion-item>
-                        <ion-icon name="checkmark-circle" item-start></ion-icon>
-                        Total  time
-                        <ion-badge item-end>{{recipeItem.totaltime}} Minutes</ion-badge>
-                      </ion-item>
-                </div>
-              </ion-col>      
-              <ion-col>
-                  <div>
-                      <ion-item>
-                          <ion-icon name="bookmarks" item-start></ion-icon>
-                          Total step
-                          <ion-badge item-end>{{recipeItem.stepinput}} Steps</ion-badge>
-                        </ion-item>
-                  </div>
-                </ion-col>    
-          </ion-row>
-        </ion-grid>
-        
-      
-  
-      
-      
-      <h1>Method</h1>
-        <ion-grid>   
-          
-          
-            <ion-row>
-              <ion-col>
-                <div *ngIf="recipeItem.stepinput >= 1">
-                    <h1>---</h1>
-                    <h2>
-                       Step 1
-                      </h2>
-                      <p>{{recipeItem.step1}}</p>
-                          
-                      <h1>---</h1>
-               </div>                                           
-              </ion-col>
-            </ion-row>
-              
-            <ion-row>       
-                <ion-col>
-                  <div *ngIf="recipeItem.stepinput >= 2">
-                      <h2>
-                         Step 2
-                        </h2>
-                        <p>
-                            {{recipeItem.step2}}
-                        </p>
-                        <h1>---</h1>
-                 </div>                                           
-                </ion-col>
-              </ion-row>
-
-              <ion-row>
-                  <ion-col>
-                    <div *ngIf="recipeItem.stepinput >= 3">
-                        <h2>
-                           Step 3
-                          </h2>
-                          <p>{{recipeItem.step3}}</p>   
-                          <h1>---</h1>  
-                   </div>                                           
-                  </ion-col>
-                </ion-row> 
-                <ion-row>
-                    <ion-col>
-                      <div *ngIf="recipeItem.stepinput >= 4">
-                          <h2>
-                             Step 4
-                            </h2>
-                            <p>{{recipeItem.step4}}</p>  
-                            <h1>---</h1>   
-                     </div>                                           
-                    </ion-col>
-                  </ion-row> 
-                  <ion-row>
-                      <ion-col>
-                        <div *ngIf="recipeItem.stepinput >= 5">
-                            <h2>
-                               Step 5
-                              </h2>
-                              <p>{{recipeItem.step5}}</p>   
-                              <h1>---</h1>  
-                       </div>                                           
-                      </ion-col>
-                    </ion-row> 
-                    <ion-row>
-                        <ion-col>
-                          <div *ngIf="recipeItem.stepinput >= 6">
-                              <h2>
-                                 Step 6
-                                </h2>
-                                <p>{{recipeItem.step6}}</p>  
-                                <h1>---</h1>   
-                         </div>                                           
-                        </ion-col>
-                      </ion-row> 
-                      <ion-row>
-                          <ion-col>
-                            <div *ngIf="recipeItem.stepinput >= 7">
-                                <h2>
-                                   Step 7
-                                  </h2>
-                                  <p>{{recipeItem.step7}}</p>  
-                                  <h1>---</h1>   
-                           </div>                                           
-                          </ion-col>
-                        </ion-row> 
-                        <ion-row>
-                            <ion-col>
-                              <div *ngIf="recipeItem.stepinput >= 8">
-                                  <h2>
-                                     Step 8
-                                    </h2>
-                                    <p>{{recipeItem.step8}}</p>    
-                                    <h1>---</h1> 
-                             </div>                                           
-                            </ion-col>
-                          </ion-row> 
-                          <ion-row>
-                              <ion-col>
-                                <div *ngIf="recipeItem.stepinput >= 9">
-                                    <h2>
-                                       Step 9
-                                      </h2>
-                                      <p>{{recipeItem.step9}}</p>
-                                      <h1>---</h1>     
-                               </div>                                           
-                              </ion-col>
-                            </ion-row> 
-                            <ion-row>
-                                <ion-col>
-                                  <div *ngIf="recipeItem.stepinput >= 10">
-                                      <h2>
-                                         Step 10
-                                        </h2>
-                                        <p>{{recipeItem.step10}}</p>  
-                                        <h1>---</h1>   
-                                 </div>                                           
-                                </ion-col>
-                              </ion-row> 
-                              <ion-row>
-                                  <ion-col>
-                                    <div *ngIf="recipeItem.stepinput >= 11">
-                                        <h2>
-                                           Step 11
-                                          </h2>
-                                          <p>{{recipeItem.step11}}</p> 
-                                          <h1>---</h1>    
-                                   </div>                                           
-                                  </ion-col>
-                                </ion-row>
-                                <ion-row>
-                                    <ion-col>
-                                      <div *ngIf="recipeItem.stepinput >= 12">
-                                          <h2>
-                                             Step 12
-                                            </h2>
-                                            <p>{{recipeItem.step12}}</p>  
-                                            <h1>---</h1>   
-                                     </div>                                           
-                                    </ion-col>
-                                  </ion-row> 
-                                  <ion-row>
-                                      <ion-col>
-                                        <div *ngIf="recipeItem.stepinput >= 13">
-                                            <h2>
-                                               Step 13
-                                              </h2>
-                                              <p>{{recipeItem.step13}}</p>     
-                                              <h1>---</h1>
-                                       </div>                                           
-                                      </ion-col>
-                                    </ion-row> 
-                                    <ion-row>
-                                        <ion-col>
-                                          <div *ngIf="recipeItem.stepinput >= 14">
-                                              <h2>
-                                                 Step 14
-                                                </h2>
-                                                <p>{{recipeItem.step14}}</p> 
-                                                <h1>---</h1>    
-                                         </div>                                           
-                                        </ion-col>
-                                      </ion-row> 
-
-                                      <ion-row>
-                                          <ion-col>
-                                            <div *ngIf="recipeItem.stepinput >= 15">
-                                                <h2>
-                                                   Step 15
-                                                  </h2>
-                                                  <p>{{recipeItem.step15}}</p>   
-                                                  <h1>---</h1>  
-                                           </div>                                           
-                                          </ion-col>
-                                        </ion-row> 
-                                                  
-      </ion-grid>
-          
-        
-  
-      
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <h1>{{recipeItem.title}}</h1>
+      </ion-card-title>
+      <p>
+        {{recipeItem.description}}
+      </p>
+    </ion-card-content>
+    <img src="{{recipeItem.image}}" />
 
 
-    </ion-card>
     <ion-grid>
-        <ion-row>
-          
-          <ion-col>
-              <button ion-button  full color="primary" icon-start>
-                  <ion-icon name='checkmark-circle'></ion-icon>
-                  Complete
-                </button>
-          </ion-col>
-          <ion-col>
-              <button ion-button  full color="primary" icon-start>
-                  <ion-icon name='construct'></ion-icon>
-                  Edit
-                </button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-item>
+              <ion-icon name="clock" item-start></ion-icon>
+              Preparation time
+              <ion-badge item-end>{{recipeItem.preptime}} Minutes</ion-badge>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-item>
+              <ion-icon name="restaurant" item-start></ion-icon>
+              Cooking time
+              <ion-badge item-end>{{recipeItem.cookingtime}} Minutes</ion-badge>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-item>
+              <ion-icon name="checkmark-circle" item-start></ion-icon>
+              Total time
+              <ion-badge item-end>{{recipeItem.totaltime}} Minutes</ion-badge>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-item>
+              <ion-icon name="bookmarks" item-start></ion-icon>
+              Total step
+              <ion-badge item-end>{{recipeItem.stepinput}} Steps</ion-badge>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-      <br><br><br><br>
+
+
+
+
+    <h1>Method</h1>
+    <ion-grid>
+
+
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 1">
+            <h1>---</h1>
+            <h2>
+              Step 1
+            </h2>
+            <p>{{recipeItem.step1}}</p>
+
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 2">
+            <h2>
+              Step 2
+            </h2>
+            <p>
+              {{recipeItem.step2}}
+            </p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 3">
+            <h2>
+              Step 3
+            </h2>
+            <p>{{recipeItem.step3}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 4">
+            <h2>
+              Step 4
+            </h2>
+            <p>{{recipeItem.step4}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 5">
+            <h2>
+              Step 5
+            </h2>
+            <p>{{recipeItem.step5}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 6">
+            <h2>
+              Step 6
+            </h2>
+            <p>{{recipeItem.step6}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 7">
+            <h2>
+              Step 7
+            </h2>
+            <p>{{recipeItem.step7}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 8">
+            <h2>
+              Step 8
+            </h2>
+            <p>{{recipeItem.step8}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 9">
+            <h2>
+              Step 9
+            </h2>
+            <p>{{recipeItem.step9}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 10">
+            <h2>
+              Step 10
+            </h2>
+            <p>{{recipeItem.step10}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 11">
+            <h2>
+              Step 11
+            </h2>
+            <p>{{recipeItem.step11}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 12">
+            <h2>
+              Step 12
+            </h2>
+            <p>{{recipeItem.step12}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 13">
+            <h2>
+              Step 13
+            </h2>
+            <p>{{recipeItem.step13}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 14">
+            <h2>
+              Step 14
+            </h2>
+            <p>{{recipeItem.step14}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div *ngIf="recipeItem.stepinput >= 15">
+            <h2>
+              Step 15
+            </h2>
+            <p>{{recipeItem.step15}}</p>
+            <h1>---</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+
+
+
+
+
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col>
+        <button ion-button full color="primary" icon-start>
+          <ion-icon name='checkmark-circle'></ion-icon>
+          Complete
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full color="primary" icon-start>
+          <ion-icon name='construct'></ion-icon>
+          Edit
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br>
+  <br>
+  <br>
+  <br>
 </ion-content>
