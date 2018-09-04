@@ -47,6 +47,8 @@ export class EditRecipeItemPage {
       this.recipeItem.step13 = this.recipeItem.step14;
       this.recipeItem.step14 = this.recipeItem.step15;
       this.recipeItem.step15 = "";
+      this.recipeItem.stepinput =- 1;
+      console.log( this.recipeItem.stepinput);
     }
     if (stepno == 2) {
       this.recipeItem.step2 = this.recipeItem.step3;
