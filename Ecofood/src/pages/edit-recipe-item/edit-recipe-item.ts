@@ -644,7 +644,7 @@ export class EditRecipeItemPage {
       }
     }
     if (this.recipeItem.stepinput >= 4) {
-      if (this.recipeItem.step4 == " ") {       
+      if (this.recipeItem.step4 == " ") {
         this.recipeItem.step4 = this.recipeItem.step5;
         this.recipeItem.step5 = this.recipeItem.step6;
         this.recipeItem.step6 = this.recipeItem.step7;
