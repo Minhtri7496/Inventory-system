@@ -12,7 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {EditRecipeItemPage} from'../pages/edit-recipe-item/edit-recipe-item';
 import {ShowFullRecipePage} from '../pages/show-full-recipe/show-full-recipe';
-
+import {AddPantryItemPage} from '../pages/add-pantry-item/add-pantry-item';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -33,7 +33,7 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,AdditemPage,EditRecipeItemPage,
-    TabsPage,ShowFullRecipePage
+    TabsPage,ShowFullRecipePage,AddPantryItemPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -47,7 +47,7 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,AdditemPage,EditRecipeItemPage,
-    TabsPage,ShowFullRecipePage
+    TabsPage,ShowFullRecipePage,AddPantryItemPage
   ],
   providers: [
     StatusBar,

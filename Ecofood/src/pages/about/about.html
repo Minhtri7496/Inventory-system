@@ -7,5 +7,48 @@
 </ion-header>
 
 <ion-content padding>
+    
 
+    <ion-card *ngFor ="let item of pantryItemRef$ | async" (click)="selectPantryItem()" >
+    <ion-item  >
+        <ion-thumbnail item-start>
+            <img src={{item.imageurl}}>
+          </ion-thumbnail>
+      <h1>{{item.title}}</h1>    
+      <ion-grid>
+        <ion-row>        
+          <ion-col>
+            <div>Stock:      </div>
+          </ion-col>
+          <ion-col>
+            <div> {{item.quantity}} </div>
+          </ion-col>
+          <ion-col>
+            <div> Unit: {{item.unit}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>        
+          <ion-col>
+            <div>Date:  </div>
+          </ion-col>
+          <ion-col>
+            <div>{{item.date}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>        
+          <ion-col>
+            <div>Related recipe:  </div>
+          </ion-col>
+          <ion-col>
+            <div>6 Recipes</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>  
+  </ion-card>
+  <ion-fab right top>
+      <button (click)="GoToAddItem()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+
+  </ion-fab>
+  <br><br><br><br>
 </ion-content>

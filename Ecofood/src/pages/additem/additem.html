@@ -40,11 +40,15 @@
   <ion-item hidden>
     <ion-input type="number" [(ngModel)]="recipeItem.recipeNumber" ng-value="0"></ion-input>
   </ion-item>
-  <ion-item>
+  <br>
+  <ion-item>     
+        <ion-thumbnail item-start>
+            <img src={{recipeItem.image}}>
+          </ion-thumbnail>
     <ion-textarea type="URL" [(ngModel)]="recipeItem.image" placeholder="Place Image URL here"></ion-textarea>
   </ion-item>
-  <br>
 
+<br>
   <ion-label id="stepslabel">
     <h3>Steps</h3>
   </ion-label>

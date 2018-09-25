@@ -9,6 +9,7 @@ import { RecipeItem } from './../../model/recipe-item/item.model';
 
 import { AlertController } from 'ionic-angular';
 import { isBlank } from '../../../node_modules/ionic-angular/util/util';
+import { empty } from '../../../node_modules/rxjs/Observer';
 /**
  * Generated class for the AdditemPage page.
  *
@@ -24,6 +25,7 @@ export class AdditemPage {
   public inputsteps: number = 1;
   steps: Array<any> = [];
   public total: number = 0;
+  imagevisible = false;
 
   recipeItem = {} as RecipeItem;
   recipeItemRef$: FirebaseListObservable<RecipeItem[]>
@@ -41,6 +43,12 @@ export class AdditemPage {
     var num2: number = 0;
     num1 = parseInt(this.recipeItem.cookingtime);
     num2 = parseInt(this.recipeItem.preptime);
+    if(isBlank(this.recipeItem.image.toString )  ){
+      this.imagevisible=false;
+    }else{
+      
+      this.imagevisible=true;
+    }
     if (isBlank(this.recipeItem.step1)) {
       this.recipeItem.step1 = ' ';
     }
