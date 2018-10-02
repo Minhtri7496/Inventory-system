@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { ShowPantryItemPage } from '../pages/show-pantry-item/show-pantry-item';
+import { EditPantryItemPage } from '../pages/edit-pantry-item/edit-pantry-item';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -17,7 +19,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-
+EditPantryItemPage
  
 const firebaseConfig = {
   apiKey: "AIzaSyA0qo9clm2ElNd-UgUHDcQHNMHfNw-8CYE",
@@ -33,7 +35,7 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,AdditemPage,EditRecipeItemPage,
-    TabsPage,ShowFullRecipePage,AddPantryItemPage
+    TabsPage,ShowFullRecipePage,AddPantryItemPage,EditPantryItemPage,ShowPantryItemPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -47,7 +49,7 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,AdditemPage,EditRecipeItemPage,
-    TabsPage,ShowFullRecipePage,AddPantryItemPage
+    TabsPage,ShowFullRecipePage,AddPantryItemPage,EditPantryItemPage,ShowPantryItemPage
   ],
   providers: [
     StatusBar,

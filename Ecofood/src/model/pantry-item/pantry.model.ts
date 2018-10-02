@@ -2,7 +2,7 @@ import { DateTime } from "../../../node_modules/ionic-angular";
 import { Url } from "url";
 
 export interface Pantryitem{
-key? : string;
+$key? : string;
 title : string;
 quantity: string;
 description: string;

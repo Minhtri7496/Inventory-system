@@ -4,6 +4,7 @@ import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/databa
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Pantryitem } from './../../model/pantry-item/pantry.model';
 import { AddPantryItemPage } from '../add-pantry-item/add-pantry-item';
+import { EditPantryItemPage } from '../edit-pantry-item/edit-pantry-item';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -19,22 +20,22 @@ export class AboutPage {
 
   selectPantryItem(pantryItem: Pantryitem) {
     this.actionSheetCtrl.create({
-      title: `Title`,
+      title: `${pantryItem.title}`,
       buttons: [{
-        text: 'Show Recipe',
+        text: 'Show Item',
         handler: () => {
           
         }
       }, {
         text: 'Edit',
         handler: () => {
-          
+          this.navCtrl.push(EditPantryItemPage, { pantryItemId: pantryItem.$key });
         }
       }, {
         text: 'Delete',
         role: 'Destructive',
         handler: () => {
-          
+          this.pantryItemRef$.remove(pantryItem.$key);
         }
       }, {
         text: 'Cancel',

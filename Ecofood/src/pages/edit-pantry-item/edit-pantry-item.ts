@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
-import { FirebaseProvider } from './../../providers/firebase/firebase';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { Pantryitem } from './../../model/pantry-item/pantry.model';
+import { Subscription } from 'rx';
 import { isBlank } from '../../../node_modules/ionic-angular/util/util';
 /**
- * Generated class for the AddPantryItemPage page.
+ * Generated class for the EditPantryItemPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,23 +13,27 @@ import { isBlank } from '../../../node_modules/ionic-angular/util/util';
 
 @IonicPage()
 @Component({
-  selector: 'page-add-pantry-item',
-  templateUrl: 'add-pantry-item.html',
+  selector: 'page-edit-pantry-item',
+  templateUrl: 'edit-pantry-item.html',
 })
-export class AddPantryItemPage {
-
+export class EditPantryItemPage {
+  pantryItemSubscription: Subscription;
+  pantryItemRef$: FirebaseObjectObservable<Pantryitem>
   pantryItem = {} as Pantryitem;
-  pantryItemRef$: FirebaseListObservable<Pantryitem[]>
   inputempty = true;
-
   constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase, public alerCtrl: AlertController) {
-    this.pantryItemRef$ = this.database.list('pantry-list');
+    const pantryItemId = this.navParams.get('pantryItemId');
+    console.log(pantryItemId);
+    this.pantryItemRef$ = this.database.object(`pantry-list/${pantryItemId}`);
+
+    this.pantryItemRef$.subscribe(
+      pantryItem => this.pantryItem = pantryItem);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddPantryItemPage');
+    console.log('ionViewDidLoad EditPantryItemPage');
   }
-  addItem(pantryItem: Pantryitem) {
+  updateRecipeItem(pantryItem: Pantryitem) {
 
     if (isBlank(this.pantryItem.title)) {
       let alert = this.alerCtrl.create({
@@ -108,17 +112,14 @@ export class AddPantryItemPage {
     } else {
       this.inputempty = false;
     }
+
+
     if (this.inputempty == false) {
-      this.pantryItemRef$.push({
-        title: this.pantryItem.title,
-        quantity: this.pantryItem.quantity,
-        description: this.pantryItem.description,
-        unit: this.pantryItem.unit,
-        date: this.pantryItem.date,
-        category: this.pantryItem.category,
-        imageurl: this.pantryItem.imageurl
-      });
-      this.navCtrl.pop();
+    this.pantryItemRef$.update(pantryItem);
+    this.navCtrl.pop();
+
     }
+
+
   }
 }

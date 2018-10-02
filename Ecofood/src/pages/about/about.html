@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
     <ion-title>
-      Inventory 
+      Pantry
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content padding>
     
 
-    <ion-card *ngFor ="let item of pantryItemRef$ | async" (click)="selectPantryItem()" >
+    <ion-card *ngFor ="let item of pantryItemRef$ | async" (click)="selectPantryItem(item)" >
     <ion-item  >
         <ion-thumbnail item-start>
             <img src={{item.imageurl}}>
