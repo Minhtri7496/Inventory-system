@@ -9,7 +9,7 @@ import { AdditemPage } from '../additem/additem';
 import { RecipeItem } from './../../model/recipe-item/item.model'
 import { EditRecipeItemPage } from '../edit-recipe-item/edit-recipe-item';
 import { ShowFullRecipePage } from "../show-full-recipe/show-full-recipe";
-import { FormControl } from '../../../node_modules/@angular/forms';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -17,27 +17,26 @@ import { FormControl } from '../../../node_modules/@angular/forms';
 
 })
 
-export class HomePage {
+export class HomePage  {
   recipeItem = {} as RecipeItem;
   recipeItemRef$: FirebaseListObservable<RecipeItem[]>
-  searchTerm: string = '';
-  searchControl: FormControl;
-  items: any;
+  recipeItemModified : any;
+  recipeTitle: Array<string>;
   constructor(public navCtrl: NavController, private database: AngularFireDatabase, private actionSheetCtrl: ActionSheetController) {
     this.recipeItemRef$ = this.database.list('recipe-list');
-    this.searchControl = new FormControl();
-
+  
   }
-  ionViewDidLoad() {
+  
+  ngOnInit() {
  
+  }
+  
+  checksubscribe(){
     
 
-}
-setFilteredItems() {
- 
   
-
-}
+    
+  }
   selectItem(recipeItem: RecipeItem) {
     this.actionSheetCtrl.create({
       title: `${recipeItem.title}`,

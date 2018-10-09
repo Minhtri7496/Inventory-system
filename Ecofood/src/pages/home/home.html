@@ -13,7 +13,7 @@
   
   
       <div class="card-background-page">
-       <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+          
       <ion-card *ngFor ="let item of recipeItemRef$ | async" (click)="selectItem(item)" >
           <img src="{{item.image}}"/>
           <div class="card-title">{{item.title }}</div>
@@ -21,12 +21,13 @@
           <div class="cardsub">Number of steps: {{item.stepinput}}</div>
           <div class="cardsub">Time completed: {{item.recipeNumber}}</div>
         </ion-card>
-       </div>
+       </div> 
 
    
   <ion-fab right top>
       <button (click)="GoToAddItem()" ion-fab mini><ion-icon name="add"></ion-icon></button>
 
   </ion-fab>
+  <button (click)="checksubscribe()" ><ion-icon name="add"></ion-icon></button>
   <br><br><br><br>
 </ion-content>

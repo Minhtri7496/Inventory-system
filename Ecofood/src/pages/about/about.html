@@ -21,20 +21,27 @@
             <div>Stock:      </div>
           </ion-col>
           <ion-col>
-            <div> {{item.quantity}} </div>
+            <div> {{item.quantity}}  {{item.unit}}</div>
           </ion-col>
-          <ion-col>
-            <div> Unit: {{item.unit}}</div>
-          </ion-col>
+          
         </ion-row>
         <ion-row>        
           <ion-col>
-            <div>Date:  </div>
+            <div>Entry Date:  </div>
           </ion-col>
           <ion-col>
             <div>{{item.date}}</div>
           </ion-col>
         </ion-row>
+
+        <ion-row>        
+            <ion-col>
+              <div>Expiry date </div>
+            </ion-col>
+            <ion-col>
+              <div>{{item.date}}</div>
+            </ion-col>
+          </ion-row>
         <ion-row>        
           <ion-col>
             <div>Related recipe:  </div>
