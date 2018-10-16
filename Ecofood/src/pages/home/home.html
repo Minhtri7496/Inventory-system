@@ -16,23 +16,6 @@
 
 
 <ion-content padding>
-<<<<<<< HEAD
-  
-  
-  
-      <div class="card-background-page">
-          
-      <ion-card *ngFor ="let item of recipeItemRef$ | async" (click)="selectItem(item)" >
-          <img src="{{item.image}}"/>
-          <div class="card-title">{{item.title }}</div>
-          <div class="cardsub">Description: {{item.description}}</div>
-          <div class="cardsub">Number of steps: {{item.stepinput}}</div>
-          <div class="cardsub">Time completed: {{item.recipeNumber}}</div>
-        </ion-card>
-       </div> 
-
-   
-=======
 
   <div *ngIf="searchcheck== true">
     <ion-searchbar [(ngModel)]="searchTerm">
@@ -71,18 +54,12 @@
 
 
 
->>>>>>> searchbar
   <ion-fab right top>
     <button (click)="GoToAddItem()" ion-fab mini>
       <ion-icon name="add"></ion-icon>
     </button>
 
   </ion-fab>
-<<<<<<< HEAD
-  
-  <br><br><br><br>
-</ion-content>
-=======
 
 
 
@@ -91,4 +68,3 @@
   <br>
   <br>
 </ion-content>
->>>>>>> searchbar
