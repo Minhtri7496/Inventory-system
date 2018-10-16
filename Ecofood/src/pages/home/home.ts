@@ -9,7 +9,7 @@ import { AdditemPage } from '../additem/additem';
 import { RecipeItem } from './../../model/recipe-item/item.model'
 import { EditRecipeItemPage } from '../edit-recipe-item/edit-recipe-item';
 import { ShowFullRecipePage } from "../show-full-recipe/show-full-recipe";
-import { FormControl } from '../../../node_modules/@angular/forms';
+import * as _ from 'lodash';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -20,24 +20,32 @@ import { FormControl } from '../../../node_modules/@angular/forms';
 export class HomePage {
   recipeItem = {} as RecipeItem;
   recipeItemRef$: FirebaseListObservable<RecipeItem[]>
+  /// unwrapped arrays from firebase
+  RecipeData: any;
+  filteredRecipeData: any;
   searchTerm: string = '';
-  searchControl: FormControl;
-  items: any;
+  searchcheck = false;
   constructor(public navCtrl: NavController, private database: AngularFireDatabase, private actionSheetCtrl: ActionSheetController) {
     this.recipeItemRef$ = this.database.list('recipe-list');
-    this.searchControl = new FormControl();
+    this.recipeItemRef$.subscribe(recipe => {
+      this.RecipeData = recipe;
+
+
+    })
+
+
+
+
+
 
   }
+
+
+
   ionViewDidLoad() {
- 
-    
 
-}
-setFilteredItems() {
- 
-  
 
-}
+  }
   selectItem(recipeItem: RecipeItem) {
     this.actionSheetCtrl.create({
       title: `${recipeItem.title}`,
@@ -67,13 +75,34 @@ setFilteredItems() {
     }).present();
   }
 
-
-
-
   GoToAddItem() {
     this.navCtrl.push(AdditemPage);
   }
+  check() {
+    this.RecipeData = this.filterItems(this.searchTerm);
+  }
+  resetSearch() {
+    this.recipeItemRef$.subscribe(recipe => {
+      this.RecipeData = recipe;
+    })
 
+  }
+
+  displaySearch() {
+    this.searchcheck = true;
+    console.log(this.searchcheck);
+  }
+  hideSearch() {
+    this.searchcheck = false;
+    console.log(this.searchcheck);
+  }
+
+  filterItems(searchTerm) {
+    return this.RecipeData.filter((item) => {
+      return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+    });
+
+  }
 
 }
 

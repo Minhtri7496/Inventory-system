@@ -1,32 +1,70 @@
 <ion-header>
   <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
     <ion-title>Recipes</ion-title>
-
-    
-    
+    <ion-buttons end *ngIf="searchcheck== false">
+      <button ion-button (click)="displaySearch()" icon-only large>
+        <ion-icon name="search"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="searchcheck== true">
+      <button ion-button (click)="hideSearch()" icon-only large>
+        <ion-icon name="search"> </ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  
-  
-  
-      <div class="card-background-page">
-       <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-      <ion-card *ngFor ="let item of recipeItemRef$ | async" (click)="selectItem(item)" >
-          <img src="{{item.image}}"/>
-          <div class="card-title">{{item.title }}</div>
-          <div class="cardsub">Description: {{item.description}}</div>
-          <div class="cardsub">Number of steps: {{item.stepinput}}</div>
-          <div class="cardsub">Time completed: {{item.recipeNumber}}</div>
-        </ion-card>
-       </div>
 
-   
+  <div *ngIf="searchcheck== true">
+    <ion-searchbar [(ngModel)]="searchTerm">
+
+
+    </ion-searchbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="check()" full>Search </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="light" (click)="resetSearch()" full>Reset</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="card-background-page">
+
+
+
+
+    <ion-card *ngFor="let item of RecipeData " (click)="selectItem(item)">
+      <img src="{{item.image}}" />
+      <div class="card-title">{{item.title }}</div>
+      <div class="cardsub">Description: {{item.description}}</div>
+      <div class="cardsub">Number of steps: {{item.stepinput}}</div>
+      <div class="cardsub">Time completed: {{item.recipeNumber}}</div>
+    </ion-card>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
   <ion-fab right top>
-      <button (click)="GoToAddItem()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <button (click)="GoToAddItem()" ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
 
   </ion-fab>
-  <br><br><br><br>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
 </ion-content>
