@@ -20,23 +20,13 @@ import { ShowFullRecipePage } from "../show-full-recipe/show-full-recipe";
 export class HomePage  {
   recipeItem = {} as RecipeItem;
   recipeItemRef$: FirebaseListObservable<RecipeItem[]>
-  recipeItemModified : any;
-  recipeTitle: Array<string>;
+  
   constructor(public navCtrl: NavController, private database: AngularFireDatabase, private actionSheetCtrl: ActionSheetController) {
     this.recipeItemRef$ = this.database.list('recipe-list');
   
   }
   
-  ngOnInit() {
  
-  }
-  
-  checksubscribe(){
-    
-
-  
-    
-  }
   selectItem(recipeItem: RecipeItem) {
     this.actionSheetCtrl.create({
       title: `${recipeItem.title}`,
