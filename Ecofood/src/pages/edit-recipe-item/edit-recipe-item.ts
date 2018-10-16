@@ -26,7 +26,7 @@ export class EditRecipeItemPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase, public alerCtrl: AlertController) {
 
     const recipeItemId = this.navParams.get('recipeItemId');
-    console.log(recipeItemId);
+    
     this.recipeItemRef$ = this.database.object(`recipe-list/${recipeItemId}`);
 
     this.recipeItemRef$.subscribe(
