@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController, Item } from 'ionic-angular';
+import { NavController, Item,NavParams } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 
-import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { RecipeItem } from './../../model/recipe-item/item.model';
+import { Pantryitem } from './../../model/pantry-item/pantry.model';
+import {ShowIngredientOptionsPage} from './../../pages/show-ingredient-options/show-ingredient-options'
 
 import { AlertController } from 'ionic-angular';
 import { isBlank } from '../../../node_modules/ionic-angular/util/util';
 import { empty } from '../../../node_modules/rxjs/Observer';
+import { Subscription } from 'rx';
 /**
  * Generated class for the AdditemPage page.
  *
@@ -23,6 +26,7 @@ import { empty } from '../../../node_modules/rxjs/Observer';
 })
 export class AdditemPage {
   public inputsteps: number = 1;
+  public inputingredients : number =1;
   steps: Array<any> = [];
   public total: number = 0;
   imagevisible = false;
@@ -30,11 +34,22 @@ export class AdditemPage {
   recipeItem = {} as RecipeItem;
   recipeItemRef$: FirebaseListObservable<RecipeItem[]>
 
-  constructor(public navCtrl: NavController, private database: AngularFireDatabase, public alerCtrl: AlertController) {
+
+//receive ingredients
+  pantryItemSubscription: Subscription;
+  pantryItemRef$: FirebaseObjectObservable<Pantryitem>
+  pantryItem = {} as Pantryitem;
+
+  constructor(public navCtrl: NavController, private database: AngularFireDatabase, public navParams: NavParams,public alerCtrl: AlertController) {
     this.recipeItemRef$ = this.database.list('recipe-list');
 
+    const pantryItemId = this.navParams.get('pantryItemId');
+    
+    this.pantryItemRef$ = this.database.object(`pantry-list/${pantryItemId}`);
 
-
+    this.pantryItemRef$.subscribe(
+      pantryItem => this.pantryItem = pantryItem);
+     
   }
 
   addItem(recipeItem: RecipeItem) {
@@ -154,6 +169,11 @@ export class AdditemPage {
     }
   }
 
+
+  addmoreingredient(){
+    this.navCtrl.push(ShowIngredientOptionsPage);
+  }
+ 
 
 
 

@@ -41,14 +41,14 @@
     <ion-input type="number" [(ngModel)]="recipeItem.recipeNumber" ng-value="0"></ion-input>
   </ion-item>
   <br>
-  <ion-item>     
-        <ion-thumbnail item-start>
-            <img src={{recipeItem.image}}>
-          </ion-thumbnail>
+  <ion-item>
+    <ion-thumbnail item-start>
+      <img src={{recipeItem.image}}>
+    </ion-thumbnail>
     <ion-textarea type="URL" [(ngModel)]="recipeItem.image" placeholder="Place Image URL here"></ion-textarea>
   </ion-item>
 
-<br>
+  <br>
   <ion-label id="stepslabel">
     <h3>Steps</h3>
   </ion-label>
@@ -123,10 +123,18 @@
     </ion-row>
   </ion-grid>
 
+  <ion-label>
+    <h3>Ingredients</h3>
+  </ion-label>
+
+  <ion-item>
+    <ion-label color="dark"> # 1 </ion-label>
+    <ion-label color="dark">{{pantryItem.title}}</ion-label>
+    <ion-input type="text" placeholder="Amount"></ion-input>
+  </ion-item>
 
 
-
-
+  <button ion-button (click)="addmoreingredient()" full>Add Ingredient </button>
 
   <br>
   <br>

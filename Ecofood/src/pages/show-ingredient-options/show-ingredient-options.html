@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ShowIngredientOptionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>showIngredientOptions</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor ="let item of pantryItemRef$ | async" (click)="selectPantryItem(item)" >
+        
+          <h1>{{item.title}} : {{item.quantity}}  {{item.unit}}</h1> 
+        
+              
+           
+            
+      
+      </ion-card>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

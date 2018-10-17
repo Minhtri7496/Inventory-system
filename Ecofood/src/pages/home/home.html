@@ -8,31 +8,33 @@
     </ion-buttons>
     <ion-buttons end *ngIf="searchcheck== true">
       <button ion-button (click)="hideSearch()" icon-only large>
-        <ion-icon name="search"> </ion-icon>
+        <ion-icon name="arrow-dropup"> </ion-icon>
       </button>
     </ion-buttons>
+
+    <div *ngIf="searchcheck== true">
+        <ion-searchbar [(ngModel)]="searchTerm">
+    
+    
+        </ion-searchbar>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <button ion-button color="light" (click)="check()" full>Search </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="light" (click)="resetSearch()" full>Reset</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
-  <div *ngIf="searchcheck== true">
-    <ion-searchbar [(ngModel)]="searchTerm">
-
-
-    </ion-searchbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <button ion-button (click)="check()" full>Search </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button color="light" (click)="resetSearch()" full>Reset</button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+  
   <div class="card-background-page">
 
 
@@ -54,7 +56,7 @@
 
 
 
-  <ion-fab right top>
+  <ion-fab right middle>
     <button (click)="GoToAddItem()" ion-fab mini>
       <ion-icon name="add"></ion-icon>
     </button>
