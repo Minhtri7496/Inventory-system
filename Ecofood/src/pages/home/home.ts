@@ -80,6 +80,7 @@ export class HomePage  {
   }
   check() {
     this.RecipeData = this.filterItems(this.searchTerm);
+    
   }
   resetSearch() {
     this.recipeItemRef$.subscribe(recipe => {
