@@ -7,24 +7,66 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>showIngredientOptions</ion-title>
+    <ion-title>Select Ingredient</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-card *ngFor ="let item of pantryItemRef$ | async" (click)="selectPantryItem(item)" >
-        
-          <h1>{{item.title}} : {{item.quantity}}  {{item.unit}}</h1> 
-        
-              
-           
-            
-      
-      </ion-card>
-<br>
-<br>
-<br>
-<br>
+
+
+    <button ion-button block (click)="addIngredient()">Add Ingredient </button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1> Available</h1>
+        <ion-card *ngFor="let item of pantryItemRef$ | async" (click)="selectPantryItem(item)">
+
+          <h2>{{item.title}} :</h2>
+          <p> {{item.quantity}} {{item.unit}}</p>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <h1> Selected</h1>
+        <ion-card *ngIf="this.ingrenumber >= 1" (click)="deselectPantryItem(1)">
+          <h2>#1 :{{pantry1Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 2" (click)="deselectPantryItem(2)">
+          <h2>#2 :{{pantry2Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 3" (click)="deselectPantryItem(3)">
+          <h2>#3 :{{pantry3Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 4" (click)="deselectPantryItem(4)">
+          <h2>#4 :{{pantry4Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 5" (click)="deselectPantryItem(5)">
+          <h2>#5 :{{pantry5Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 6" (click)="deselectPantryItem(6)">
+          <h2>#6 :{{pantry6Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 7" (click)="deselectPantryItem(7)" >
+          <h2>#7 :{{pantry7Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 8" (click)="deselectPantryItem(8)">
+          <h2>#8 :{{pantry8Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 9" (click)="deselectPantryItem(9)">
+          <h2>#9 :{{pantry9Item.title}}</h2>
+        </ion-card>
+        <ion-card *ngIf="this.ingrenumber >= 10" (click)="deselectPantryItem(10)">
+          <h2>#10 :{{pantry10Item.title}}</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
 </ion-content>
