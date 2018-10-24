@@ -78,6 +78,7 @@ export class HomePage  {
   GoToAddItem() {
     this.navCtrl.push(AdditemPage);
   }
+  
   check() {
     this.RecipeData = this.filterItems(this.searchTerm);
     

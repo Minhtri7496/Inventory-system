@@ -32,42 +32,51 @@ export interface RecipeItem {
     ingredient1:string;
     keyingredient1:string;
     amountingredient1:string;
+    amount1unit: String;
 
     ingredient2:string;
     keyingredient2:string;
     amountingredient2:string;
+    amount2unit: String;
 
     ingredient3:string;
     keyingredient3:string;
     amountingredient3:string;
+    amount3unit: String;
 
     ingredient4:string;
     keyingredient4:string;
     amountingredient4:string;
+    amount4unit: String;
 
     ingredient5:string;
     keyingredient5:string;
     amountingredient5:string;
+    amount5unit: String;
 
     ingredient6:string;
     keyingredient6:string;
     amountingredient6:string;
+    amount6unit: String;
 
     ingredient7:string;
     keyingredient7:string;
     amountingredient7:string;
+    amount7unit: String;
 
     ingredient8:string;
     keyingredient8:string;
     amountingredient8:string;
+    amount8unit: String;
 
     ingredient9:string;
     keyingredient9:string;
     amountingredient9:string;
+    amount9unit: String;
 
     ingredient10:string;
     keyingredient10:string;
     amountingredient10:string;
-
+    amount10unit: String;
 
 }

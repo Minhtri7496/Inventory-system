@@ -5,6 +5,7 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Pantryitem } from './../../model/pantry-item/pantry.model';
 import { AdditemPage } from '../additem/additem';
 import { Subscription } from 'rx';
+import { AddPantryItemPage } from '../add-pantry-item/add-pantry-item';
 /**
  * Generated class for the ShowIngredientOptionsPage page.
  *
@@ -70,7 +71,11 @@ export class ShowIngredientOptionsPage {
   ionViewDidLoad() {
     
   }
+  addNewIngredient(){
 
+    this.navCtrl.push(AddPantryItemPage);
+
+  }
   deselectPantryItem(pantrynumber: Number) {
     if (pantrynumber == 1) {
       this.pantry1Item = this.pantry2Item;

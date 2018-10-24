@@ -26,7 +26,7 @@ import { Subscription } from 'rx';
 })
 export class AdditemPage {
   public inputsteps: number = 1;
-  public inputingredients;
+  public inputingredients = 0;
   steps: Array<any> = [];
   emptyinput = false;
   public total: number = 0;
@@ -101,7 +101,7 @@ export class AdditemPage {
     num2 = parseInt(this.recipeItem.preptime);
     if (isBlank(this.recipeItem.image)) {
       this.recipeItem.image = new URL("data:image/png;base64,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");
-    } 
+    }
     if (isBlank(this.recipeItem.step1)) {
       this.recipeItem.step1 = ' ';
     }
@@ -149,7 +149,19 @@ export class AdditemPage {
     }
 
 
-
+    if (this.inputingredients == 0) {
+      console.log("Ingre count is 0. ");
+      //ingre 1
+      
+        console.log("amount is blank")
+        this.emptyinput = true;
+        let alert = this.alerCtrl.create({
+          title: 'There is no Ingredient added',
+          message: 'Please choose at least 1 ingredient',
+          buttons: ['Ok']
+        });
+        alert.present()
+      }
     //////////////////////////////////////////////////////////////////Ingredient 1//////////////////////////////////////////
     if (this.inputingredients == 1) {
       console.log("Ingre count is 1. ");
@@ -177,6 +189,9 @@ export class AdditemPage {
       if (isBlank(this.pantry2Item.$key)) {
         this.pantry2Item.$key = ' ';
       }
+      if (isBlank(this.pantry2Item.unit)) {
+        this.pantry2Item.unit = ' ';
+      }
 
       //check Ingredient3
       if (isBlank(this.recipeItem.amountingredient3)) {
@@ -187,6 +202,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry3Item.$key)) {
         this.pantry3Item.$key = ' ';
+      }
+      if (isBlank(this.pantry3Item.unit)) {
+        this.pantry3Item.unit = ' ';
       }
 
       //check Ingredient4
@@ -199,6 +217,9 @@ export class AdditemPage {
       if (isBlank(this.pantry4Item.$key)) {
         this.pantry4Item.$key = ' ';
       }
+      if (isBlank(this.pantry4Item.unit)) {
+        this.pantry4Item.unit = ' ';
+      }
 
       //check Ingredient5
       if (isBlank(this.recipeItem.amountingredient5)) {
@@ -209,6 +230,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry5Item.$key)) {
         this.pantry5Item.$key = ' ';
+      }
+      if (isBlank(this.pantry5Item.unit)) {
+        this.pantry5Item.unit = ' ';
       }
 
       //check Ingredient6
@@ -221,7 +245,9 @@ export class AdditemPage {
       if (isBlank(this.pantry6Item.$key)) {
         this.pantry6Item.$key = ' ';
       }
-
+      if (isBlank(this.pantry6Item.unit)) {
+        this.pantry6Item.unit = ' ';
+      }
       //check Ingredient7
       if (isBlank(this.recipeItem.amountingredient7)) {
         this.recipeItem.amountingredient7 = ' ';
@@ -231,6 +257,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry7Item.$key)) {
         this.pantry7Item.$key = ' ';
+      }
+      if (isBlank(this.pantry7Item.unit)) {
+        this.pantry7Item.unit = ' ';
       }
 
       //check Ingredient8
@@ -243,6 +272,9 @@ export class AdditemPage {
       if (isBlank(this.pantry8Item.$key)) {
         this.pantry8Item.$key = ' ';
       }
+      if (isBlank(this.pantry8Item.unit)) {
+        this.pantry8Item.unit = ' ';
+      }
 
       //check Ingredient9
       if (isBlank(this.recipeItem.amountingredient9)) {
@@ -254,6 +286,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -264,6 +299,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
 
 
@@ -311,6 +349,9 @@ export class AdditemPage {
       if (isBlank(this.pantry3Item.$key)) {
         this.pantry3Item.$key = ' ';
       }
+      if (isBlank(this.pantry3Item.unit)) {
+        this.pantry3Item.unit = ' ';
+      }
 
       //check Ingredient4
       if (isBlank(this.recipeItem.amountingredient4)) {
@@ -321,6 +362,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry4Item.$key)) {
         this.pantry4Item.$key = ' ';
+      }
+      if (isBlank(this.pantry4Item.unit)) {
+        this.pantry4Item.unit = ' ';
       }
 
       //check Ingredient5
@@ -333,6 +377,9 @@ export class AdditemPage {
       if (isBlank(this.pantry5Item.$key)) {
         this.pantry5Item.$key = ' ';
       }
+      if (isBlank(this.pantry5Item.unit)) {
+        this.pantry5Item.unit = ' ';
+      }
 
       //check Ingredient6
       if (isBlank(this.recipeItem.amountingredient6)) {
@@ -344,7 +391,9 @@ export class AdditemPage {
       if (isBlank(this.pantry6Item.$key)) {
         this.pantry6Item.$key = ' ';
       }
-
+      if (isBlank(this.pantry6Item.unit)) {
+        this.pantry6Item.unit = ' ';
+      }
       //check Ingredient7
       if (isBlank(this.recipeItem.amountingredient7)) {
         this.recipeItem.amountingredient7 = ' ';
@@ -354,6 +403,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry7Item.$key)) {
         this.pantry7Item.$key = ' ';
+      }
+      if (isBlank(this.pantry7Item.unit)) {
+        this.pantry7Item.unit = ' ';
       }
 
       //check Ingredient8
@@ -366,6 +418,9 @@ export class AdditemPage {
       if (isBlank(this.pantry8Item.$key)) {
         this.pantry8Item.$key = ' ';
       }
+      if (isBlank(this.pantry8Item.unit)) {
+        this.pantry8Item.unit = ' ';
+      }
 
       //check Ingredient9
       if (isBlank(this.recipeItem.amountingredient9)) {
@@ -377,6 +432,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -387,6 +445,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -446,6 +507,9 @@ export class AdditemPage {
       if (isBlank(this.pantry4Item.$key)) {
         this.pantry4Item.$key = ' ';
       }
+      if (isBlank(this.pantry4Item.unit)) {
+        this.pantry4Item.unit = ' ';
+      }
 
       //check Ingredient5
       if (isBlank(this.recipeItem.amountingredient5)) {
@@ -456,6 +520,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry5Item.$key)) {
         this.pantry5Item.$key = ' ';
+      }
+      if (isBlank(this.pantry5Item.unit)) {
+        this.pantry5Item.unit = ' ';
       }
 
       //check Ingredient6
@@ -468,7 +535,9 @@ export class AdditemPage {
       if (isBlank(this.pantry6Item.$key)) {
         this.pantry6Item.$key = ' ';
       }
-
+      if (isBlank(this.pantry6Item.unit)) {
+        this.pantry6Item.unit = ' ';
+      }
       //check Ingredient7
       if (isBlank(this.recipeItem.amountingredient7)) {
         this.recipeItem.amountingredient7 = ' ';
@@ -478,6 +547,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry7Item.$key)) {
         this.pantry7Item.$key = ' ';
+      }
+      if (isBlank(this.pantry7Item.unit)) {
+        this.pantry7Item.unit = ' ';
       }
 
       //check Ingredient8
@@ -490,6 +562,9 @@ export class AdditemPage {
       if (isBlank(this.pantry8Item.$key)) {
         this.pantry8Item.$key = ' ';
       }
+      if (isBlank(this.pantry8Item.unit)) {
+        this.pantry8Item.unit = ' ';
+      }
 
       //check Ingredient9
       if (isBlank(this.recipeItem.amountingredient9)) {
@@ -501,6 +576,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -511,6 +589,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -574,16 +655,7 @@ export class AdditemPage {
         this.emptyinput = false;
       }
 
-      //check Ingredient4
-      if (isBlank(this.recipeItem.amountingredient4)) {
-        this.recipeItem.amountingredient4 = ' ';
-      }
-      if (isBlank(this.pantry4Item.title)) {
-        this.pantry4Item.title = ' ';
-      }
-      if (isBlank(this.pantry4Item.$key)) {
-        this.pantry4Item.$key = ' ';
-      }
+   
 
       //check Ingredient5
       if (isBlank(this.recipeItem.amountingredient5)) {
@@ -594,6 +666,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry5Item.$key)) {
         this.pantry5Item.$key = ' ';
+      }
+      if (isBlank(this.pantry5Item.unit)) {
+        this.pantry5Item.unit = ' ';
       }
 
       //check Ingredient6
@@ -606,7 +681,9 @@ export class AdditemPage {
       if (isBlank(this.pantry6Item.$key)) {
         this.pantry6Item.$key = ' ';
       }
-
+      if (isBlank(this.pantry6Item.unit)) {
+        this.pantry6Item.unit = ' ';
+      }
       //check Ingredient7
       if (isBlank(this.recipeItem.amountingredient7)) {
         this.recipeItem.amountingredient7 = ' ';
@@ -616,6 +693,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry7Item.$key)) {
         this.pantry7Item.$key = ' ';
+      }
+      if (isBlank(this.pantry7Item.unit)) {
+        this.pantry7Item.unit = ' ';
       }
 
       //check Ingredient8
@@ -628,6 +708,9 @@ export class AdditemPage {
       if (isBlank(this.pantry8Item.$key)) {
         this.pantry8Item.$key = ' ';
       }
+      if (isBlank(this.pantry8Item.unit)) {
+        this.pantry8Item.unit = ' ';
+      }
 
       //check Ingredient9
       if (isBlank(this.recipeItem.amountingredient9)) {
@@ -639,6 +722,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -649,6 +735,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -739,7 +828,9 @@ export class AdditemPage {
       if (isBlank(this.pantry6Item.$key)) {
         this.pantry6Item.$key = ' ';
       }
-
+      if (isBlank(this.pantry6Item.unit)) {
+        this.pantry6Item.unit = ' ';
+      }
       //check Ingredient7
       if (isBlank(this.recipeItem.amountingredient7)) {
         this.recipeItem.amountingredient7 = ' ';
@@ -749,6 +840,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry7Item.$key)) {
         this.pantry7Item.$key = ' ';
+      }
+      if (isBlank(this.pantry7Item.unit)) {
+        this.pantry7Item.unit = ' ';
       }
 
       //check Ingredient8
@@ -761,6 +855,9 @@ export class AdditemPage {
       if (isBlank(this.pantry8Item.$key)) {
         this.pantry8Item.$key = ' ';
       }
+      if (isBlank(this.pantry8Item.unit)) {
+        this.pantry8Item.unit = ' ';
+      }
 
       //check Ingredient9
       if (isBlank(this.recipeItem.amountingredient9)) {
@@ -772,6 +869,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -782,6 +882,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -883,6 +986,9 @@ export class AdditemPage {
       if (isBlank(this.pantry7Item.$key)) {
         this.pantry7Item.$key = ' ';
       }
+      if (isBlank(this.pantry7Item.unit)) {
+        this.pantry7Item.unit = ' ';
+      }
 
       //check Ingredient8
       if (isBlank(this.recipeItem.amountingredient8)) {
@@ -893,6 +999,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry8Item.$key)) {
         this.pantry8Item.$key = ' ';
+      }
+      if (isBlank(this.pantry8Item.unit)) {
+        this.pantry8Item.unit = ' ';
       }
 
       //check Ingredient9
@@ -905,6 +1014,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -915,6 +1027,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -1032,6 +1147,9 @@ export class AdditemPage {
       if (isBlank(this.pantry8Item.$key)) {
         this.pantry8Item.$key = ' ';
       }
+      if (isBlank(this.pantry8Item.unit)) {
+        this.pantry8Item.unit = ' ';
+      }
 
       //check Ingredient9
       if (isBlank(this.recipeItem.amountingredient9)) {
@@ -1043,6 +1161,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -1053,6 +1174,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -1183,6 +1307,9 @@ export class AdditemPage {
       if (isBlank(this.pantry9Item.$key)) {
         this.pantry9Item.$key = ' ';
       }
+      if (isBlank(this.pantry9Item.unit)) {
+        this.pantry9Item.unit = ' ';
+      }
 
       //check Ingredient10
       if (isBlank(this.recipeItem.amountingredient10)) {
@@ -1193,6 +1320,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -1337,6 +1467,9 @@ export class AdditemPage {
       }
       if (isBlank(this.pantry10Item.$key)) {
         this.pantry10Item.$key = ' ';
+      }
+      if (isBlank(this.pantry10Item.unit)) {
+        this.pantry10Item.unit = ' ';
       }
     }
 
@@ -1495,7 +1628,7 @@ export class AdditemPage {
         cookingtime: this.recipeItem.cookingtime,
         totaltime: Number(this.total.toString()),
         image: this.recipeItem.image,
-        ingredientNumber:this.inputingredients,
+        ingredientNumber: this.inputingredients,
         stepinput: Number(this.inputsteps),
         step1: this.recipeItem.step1,
         step2: this.recipeItem.step2,
@@ -1516,43 +1649,52 @@ export class AdditemPage {
         ingredient1: this.pantry1Item.title,
         keyingredient1: this.pantry1Item.$key,
         amountingredient1: this.recipeItem.amountingredient1,
+        amount1unit: this.pantry1Item.unit,
 
         ingredient2: this.pantry2Item.title,
         keyingredient2: this.pantry2Item.$key,
         amountingredient2: this.recipeItem.amountingredient2,
+        amount2unit: this.pantry2Item.unit,
 
         ingredient3: this.pantry3Item.title,
         keyingredient3: this.pantry3Item.$key,
         amountingredient3: this.recipeItem.amountingredient3,
+        amount3unit: this.pantry3Item.unit,
 
         ingredient4: this.pantry4Item.title,
         keyingredient4: this.pantry4Item.$key,
         amountingredient4: this.recipeItem.amountingredient4,
+        amount4unit: this.pantry4Item.unit,
 
         ingredient5: this.pantry5Item.title,
         keyingredient5: this.pantry5Item.$key,
         amountingredient5: this.recipeItem.amountingredient5,
+        amount5unit: this.pantry5Item.unit,
 
         ingredient6: this.pantry6Item.title,
         keyingredient6: this.pantry6Item.$key,
         amountingredient6: this.recipeItem.amountingredient6,
+        amount6unit: this.pantry6Item.unit,
 
         ingredient7: this.pantry7Item.title,
         keyingredient7: this.pantry7Item.$key,
         amountingredient7: this.recipeItem.amountingredient7,
+        amount7unit: this.pantry7Item.unit,
 
         ingredient8: this.pantry8Item.title,
         keyingredient8: this.pantry8Item.$key,
         amountingredient8: this.recipeItem.amountingredient8,
+        amount8unit: this.pantry8Item.unit,
 
         ingredient9: this.pantry9Item.title,
         keyingredient9: this.pantry9Item.$key,
         amountingredient9: this.recipeItem.amountingredient9,
+        amount9unit: this.pantry9Item.unit,
 
         ingredient10: this.pantry10Item.title,
         keyingredient10: this.pantry10Item.$key,
         amountingredient10: this.recipeItem.amountingredient10,
-
+        amount10unit: this.pantry10Item.unit,
       });
       this.navCtrl.pop();
     }

@@ -8,6 +8,11 @@
 
   <ion-navbar color="primary">
     <ion-title>Select Ingredient</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addNewIngredient()" icon-only large>
+        <ion-icon name="add"> </ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -16,7 +21,11 @@
 <ion-content padding>
 
 
-    <button ion-button block (click)="addIngredient()">Add Ingredient </button>
+  <ion-buttons >
+    <button ion-button (click)="addNewIngredient()" icon-only full>
+      <ion-icon name="search"> </ion-icon>
+    </button>
+  </ion-buttons>
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -59,6 +68,9 @@
         <ion-card *ngIf="this.ingrenumber >= 10" (click)="deselectPantryItem(10)">
           <h2>#10 :{{pantry10Item.title}}</h2>
         </ion-card>
+        <div *ngIf="this.ingrenumber >= 1">
+        <button  ion-button block (click)="addIngredient()">Add Selected</button>
+      </div>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -13,7 +13,7 @@
     </ion-buttons>
 
     <div *ngIf="searchcheck== true">
-        <ion-searchbar [(ngModel)]="searchTerm">
+        <ion-searchbar [(ngModel)]="searchTerm" >
     
     
         </ion-searchbar>
@@ -45,6 +45,7 @@
       <div class="card-title">{{item.title }}</div>
       <div class="cardsub">Description: {{item.description}}</div>
       <div class="cardsub">Number of steps: {{item.stepinput}}</div>
+      <div class="cardsub">Number of ingredients: {{item.ingredientNumber}}</div>
       <div class="cardsub">Time completed: {{item.recipeNumber}}</div>
     </ion-card>
   </div>
