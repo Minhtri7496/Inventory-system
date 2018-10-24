@@ -10,6 +10,7 @@ export interface RecipeItem {
     image: Url;
     stepinput: number;
     recipeNumber: Number;
+    ingredientNumber:Number;
 
     step1: string;
     step2: string;

@@ -129,52 +129,52 @@
 
   <ion-item *ngIf="this.inputingredients >= 1" >
     <ion-label color="dark"> # 1 </ion-label>
-    <ion-label color="dark">{{pantry1Item.title}}</ion-label>
+    <ion-label color="dark">{{pantry1Item.title}} ( {{pantry1Item.unit}} )</ion-label>
     <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient1"></ion-input>
   </ion-item>
   <ion-item *ngIf="this.inputingredients >= 2" >
       <ion-label color="dark"> # 2 </ion-label>
-      <ion-label color="dark">{{pantry2Item.title}}</ion-label>
+      <ion-label color="dark">{{pantry2Item.title}} ( {{pantry2Item.unit}} )</ion-label>
       <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient2"></ion-input>
     </ion-item>
     <ion-item *ngIf="this.inputingredients >= 3" >
         <ion-label color="dark"> # 3 </ion-label>
-        <ion-label color="dark">{{pantry3Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry3Item.title}} ( {{pantry3Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient3"></ion-input>
       </ion-item>
       <ion-item *ngIf="this.inputingredients >= 4" >
         <ion-label color="dark"> # 4 </ion-label>
-        <ion-label color="dark">{{pantry4Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry4Item.title}} ( {{pantry4Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient4"></ion-input>
       </ion-item>
       <ion-item *ngIf="this.inputingredients >= 5" >
         <ion-label color="dark"> # 5 </ion-label>
-        <ion-label color="dark">{{pantry5Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry5Item.title}} ( {{pantry5Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount"[(ngModel)]="recipeItem.amountingredient5"></ion-input>
       </ion-item>
       <ion-item *ngIf="this.inputingredients >= 6" >
         <ion-label color="dark"> # 6 </ion-label>
-        <ion-label color="dark">{{pantry6Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry6Item.title}}( {{pantry6Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient6"></ion-input>
       </ion-item>
       <ion-item *ngIf="this.inputingredients >= 7" >
         <ion-label color="dark"> # 7 </ion-label>
-        <ion-label color="dark">{{pantry7Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry7Item.title}} ( {{pantry7Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient7"></ion-input>
       </ion-item>
       <ion-item *ngIf="this.inputingredients >= 8" >
         <ion-label color="dark"> # 8 </ion-label>
-        <ion-label color="dark">{{pantry8Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry8Item.title}} ( {{pantry8Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient8"></ion-input>
       </ion-item>
       <ion-item *ngIf="this.inputingredients >= 9" >
         <ion-label color="dark"> # 9 </ion-label>
-        <ion-label color="dark">{{pantry9Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry9Item.title}} ( {{pantry9Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient9"></ion-input>
       </ion-item>
       <ion-item *ngIf="this.inputingredients >= 10" >
         <ion-label color="dark"> # 10 </ion-label>
-        <ion-label color="dark">{{pantry10Item.title}}</ion-label>
+        <ion-label color="dark">{{pantry10Item.title}} ( {{pantry10Item.unit}} )</ion-label>
         <ion-input type="text" placeholder="Amount" [(ngModel)]="recipeItem.amountingredient10"></ion-input>
       </ion-item>
   <button ion-button (click)="addmoreingredient()" full>Edit Ingredient </button>

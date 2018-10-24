@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { RecipeItem } from '../../model/recipe-item/item.model';
 import { Subscription } from 'rx';
+import { isBlank } from '../../../node_modules/ionic-angular/util/util';
 /**
  * Generated class for the ShowFullRecipePage page.
  *
@@ -26,6 +27,7 @@ export class ShowFullRecipePage {
 
     this.recipeItemRef$.subscribe(
       recipeItem => this.recipeItem = recipeItem);
+      
   }
 
   ionViewDidLoad() {

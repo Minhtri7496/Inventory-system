@@ -396,43 +396,43 @@ export class ShowIngredientOptionsPage {
     
     if(this.ingrenumber >=1){
     this.events.publish('item1',this.pantry1Item);
-    console.log("Pantry1");
+    
    }
    if(this.ingrenumber>=2){
     this.events.publish('item2',this.pantry2Item);
-    console.log("Pantry2");
+    
    }
    if(this.ingrenumber>=3){
     this.events.publish('item3',this.pantry3Item);
-    console.log("Pantry3");
+ 
    }
    if(this.ingrenumber>=4){
     this.events.publish('item4',this.pantry4Item);
-    console.log("Pantry4");
+  
    }
    if(this.ingrenumber>=5){
     this.events.publish('item5',this.pantry5Item);
-    console.log("Pantry5");
+   
    }
    if(this.ingrenumber>=6){
     this.events.publish('item6',this.pantry6Item);
-    console.log("Pantry6");
+    
    }
    if(this.ingrenumber>=7){
     this.events.publish('item7',this.pantry7Item);
-    console.log("Pantry7");
+
    }
    if(this.ingrenumber>=8){
     this.events.publish('item8',this.pantry8Item);
-    console.log("Pantry8");
+    
    }
    if(this.ingrenumber>=9){
     this.events.publish('item9',this.pantry9Item);
-    console.log("Pantry9");
+
    }
    if(this.ingrenumber>=10){
     this.events.publish('item10',this.pantry10Item);
-    console.log("Pantry10");
+ 
    }
    this.view.dismiss();
   }
