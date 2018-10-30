@@ -539,7 +539,6 @@
           </div>
         </ion-col>
       </ion-row>
-
       <ion-row>
         <ion-col>
           <div *ngIf="recipeItem.stepinput >= 15">
@@ -553,22 +552,20 @@
       </ion-row>
 
     </ion-grid>
-
-
-
+    
   </ion-card>
 
   <ion-grid>
     <ion-row>
 
       <ion-col>
-        <button ion-button full color="primary" icon-start>
+        <button ion-button full color="primary" (click)="completeRecipe()" icon-start>
           <ion-icon name='checkmark-circle'></ion-icon>
           Complete
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button full color="primary" icon-start>
+        <button ion-button full color="primary" (click)="GoToEditItem()" icon-start>
           <ion-icon name='construct'></ion-icon>
           Edit
         </button>

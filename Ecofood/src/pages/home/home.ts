@@ -79,6 +79,7 @@ export class HomePage  {
     this.navCtrl.push(AdditemPage);
   }
   
+ 
   check() {
     this.RecipeData = this.filterItems(this.searchTerm);
     
